@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>هدية لصديقتي</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0e6d6;
+            color: #4a4a4a;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            background-color: #6b8e23;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #556b2f;
+        }
+
+        .message {
+            display: none;
+            font-size: 24px;
+            margin-top: 20px;
+            color: #2f4f4f;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>أنا  كلبة</h1>
+    <button onclick="showMessage()">عبزي هنا يا الحابسة</button>
+    <div class="message" id="message">
+        <p id="messageText"></p>
+    </div>
+</div>
+
+<script>
+    const messages = [
+        "اللهمَّ إنّه حبيبي وصديقي ومأمني وراحتي، اللهمَّ احفظه لي، وأطل في عُمره، ولا تحني له ظهراً، وأسعده ضعف ما أسعدني دمتَ لقلبي سنداً وحبيباً وشريكاً حتى نشيبَ سوياً .♥️",
+        "وجُودكَ بحياتي: من الأشياء الحلوه اللي خلتني أؤمن بأن صدف الحياة ممكن تكون جميلة جداً أنتَ أجمل شئ دخل حياتي، أنتبه لقلبكَ وضحكتكَ اللي أحبها أنتبه لفرحتكَ لأن هنا فيه شخص يحبكَ ويحب قلبكَ جداً ، ربنا ما يحرمني منكَ يا محلي دنيتي ❤️",
+        "الأحلى من الحب إنك حبيّبي. ❤️"
+    ];
+
+    let currentIndex = 0;
+
+    function showMessage() {
+        const message = document.getElementById('message');
+        const messageText = document.getElementById('messageText');
+        
+        messageText.innerText = messages[currentIndex];
+        message.style.display = "block";
+
+        // Update index for next message
+        currentIndex = (currentIndex + 1) % messages.length; // Loop back to the start
+    }
+</script>
+
+</body>
+</html>
